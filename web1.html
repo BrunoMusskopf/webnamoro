@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="bot1/bots.js"></script>
+    <script src="bot1/srcbot.js"></script>
+    <script>        
+        $(function() {
+            var input = $("input");
+            $("form").submit(function(e) {
+                var r = Bots.sendMessage("webnamorada", input.val(), { "USER": "user" });
+                $("<p style='display:none; color:black; position:relative;left:70%; top: x; '></p>").appendTo("header").text("[user] " + input.val()).fadeIn("fast", toBottom);
+                input.val("");
+                
+                setTimeout(function() {
+                    for (var i = 0; i < r.length; i++) {
+                        $("<p style='display:none;'></p>").appendTo("header").text(r[i]).fadeIn("fast", toBottom);
+                    }
+                }, Math.random() * 1000);
+                                
+                e.preventDefault();
+                return false;
+            });
+        });
+        
+        function toBottom() {
+            $("div").scrollTop($("div").get("scrollHeight"));
+        }
+    </script>
+    <style>
+    #container{
+    margin:0 auto;
+    width:800px;
+    margin-top:20px;
+}
+    #janela{
+    width:760px;
+    padding:20px;
+    height:500px;
+    background:#f8f4f3;
+    word-wrap:break-word;
+    position:fixed;
+    margin-bottom:20px;
+    border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.4),inset -2px -2px 0px 0px rgba(0,0,0,.1),3px 3px 0px 0px rgba(0,0,0,.072);
+    -moz-box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.4),inset -2px -2px 0px 0px rgba(0,0,0,.1),3px 3px 0px 0px rgba(0,0,0,.072);
+    box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.4),inset -2px -2px 0px 0px rgba(0,0,0,.1),3px 3px 0px 0px rgba(0,0,0,.072);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    transition:.5s;
+    -webkit-transition:.5s;
+    -moz-transition:.5s;
+    -o-transition:.5s;
+    z-index: 0;
+        }
+        #barra{background: #fbcdc8;
+    background: -moz-linear-gradient(left, #fbcdc8 0%, #f3d6c8 100%);
+    background: -webkit-linear-gradient(left, #fbcdc8 0%,#f3d6c8 100%);
+    background: linear-gradient(to right, #fbcdc8 0%,#f3d6c8 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbcdc8', endColorstr='#f3d6c8',GradientType=1 );
+    padding:15px;
+    margin-left:-20px;
+    margin-top:-20px;
+    width:770px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-top-left: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.4),inset -2px -2px 0px 0px rgba(0,0,0,.05),0px 2px 0px 0px rgba(255,255,255,0.4);
+    -moz-box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.2),inset -2px -2px 0px 0px rgba(0,0,0,.05),0px 2px 0px 0px rgba(255,255,255,0.4);
+    box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.2),inset -2px -2px 0px 0px rgba(0,0,0,.05),0px 2px 0px 0px rgba(255,255,255,0.4);
+    border-bottom:1px solid rgba(0,0,0,.25);
+}
+
+        #barra2 {
+    background:#f8ebe5;
+    width:770px;
+    padding:15px;
+    border-bottom:1px solid rgba(0,0,0,.3);
+    margin-left:-20px;
+    -webkit-box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.2),inset -2px -2px 0px 0px rgba(0,0,0,.05),0px 2px 0px 0px rgba(255,255,255,0.4);
+    -moz-box-shadow: inset 2px 2px 0px 0px rgba(255,255,255,.2),inset -2px -2px 0px 0px rgba(0,0,0,.05),0px 2px 0px 0px rgba(255,255,255,0.4);
+    box-shadow:inset 2px 0px 0px 0px rgba(255,255,255,0.2), inset -2px -2px 0px 0px rgba(0,0,0,.05),0px 2px 0px 0px rgba(255,255,255,0.4);
+}
+        #ad {
+    padding:5px 5px 1px 5px;
+    border:1px solid rgba(0,0,0,.3);
+    
+    width:550px;
+    margin-left:115px;
+    
+    
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+     background:#fff;
+     position:absolute;
+     margin-top:-13px;
+}
+        
+#barralado {
+    position:absolute;
+    margin-top:87px;
+    left: 340px;
+    width:115px;
+    padding: 10px;
+    
+    border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,.4),inset -1px -1px 0px 0px rgba(0,0,0,.1);
+    -moz-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,.4),inset -1px -1px 0px 0px rgba(0,0,0,.1);
+    box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,.4),inset -1px -1px 0px 0px rgba(0,0,0,.1);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background:rgba(255,255,255,.1);
+    
+    max-height:420px;
+    align-content: center;
+    text-align: center;
+    display: inline-block;
+    
+
+        }
+        #icon {
+    text-align:center;
+    padding:5px;
+    border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,.4),inset -1px -1px 0px 0px rgba(0,0,0,.1);
+    -moz-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,.4),inset -1px -1px 0px 0px rgba(0,0,0,.1);
+    box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,.4),inset -1px -1px 0px 0px rgba(0,0,0,.1);
+    width:70px;
+    height:70px;
+    margin: auto;
+    border-radius: 100%;
+}
+        
+        #subtitle {
+    font-family:roboto;
+    text-align:center;
+    font-weight:300;
+    letter-spacing:1px;
+    font-size:15px;
+    margin-top:15px;
+    margin-right: 5px;
+    margin-bottom:10px;
+    color:#fbcdc8;
+
+}
+#descricao {
+    margin-top:15px;
+    background:rgba(0,0,0,.015);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-box-shadow: inset 1px 1px 0px 0px rgba(0,0,0,.05), 1px 1px 0px 0px rgba(255,255,255,0.2);
+    -moz-box-shadow: inset 1px 1px 0px 0px rgba(0,0,0,.05), 1px 1px 0px 0px rgba(255,255,255,0.2);
+    box-shadow: inset 1px 1px 0px 0px rgba(0,0,0,.05), 1px 1px 0px 0px rgba(255,255,255,0.3);
+    padding:10px 5px 10px 5px;
+    text-align:center;
+
+
+
+}
+
+        #conteudo{
+    background:rgba(0,0,0,.015) url('https://static.tumblr.com/3c6467278a66af3216348e8588a69062/zq8teoi/P5Kpf40y8/tumblr_static_c2hothjlx0gk40oow80gcso8g.png');
+    background-attachment: fixed;
+    background-position:center top;
+    height:340px;
+    padding:50px;
+    width:500px;
+    overflow:auto;
+    margin-top:87px;
+    margin-left:165px;
+    position:fixed;
+    border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius: 5px;
+    -moz-border-radius-topright: 0;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05),inset 2px 2px 0px 0px rgba(0,0,0,0.02);
+            max-width:
+             
+                
+            
+}
+           @font-face {
+  font-family:zap;
+  src: url(fonte.ttf);
+} 
+
+
+        body{
+            
+            background-image: url(f0b083a5f0a4476d6c34a630acb444ac2e17d8ab_00.gif);
+            background-size: cover;
+        }
+        
+   #mensagem {
+            width:400px;
+            height:300px;
+            padding:5px;
+            overflow:auto;
+              font-family:zap ;
+            color:#d3a4f2;
+            max-width: 900px;
+        }
+        #input {
+            width:455px;
+            border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius: 5px;
+    -moz-border-radius-topright: 0;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05),inset 2px 2px 0px 0px rgba(0,0,0,0.02);
+            
+        }
+        button {
+            width:50px;
+                     border:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(0,0,0,.45);
+    border-right:1px solid rgba(0,0,0,.45);
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius: 5px;
+    -moz-border-radius-topright: 0;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 0px 0px rgba(255,255,255,0.4),-2px -2px 0px 0px rgba(0,0,0,0.05),inset 2px 2px 0px 0px rgba(0,0,0,0.02);
+            background-color: palevioletred;
+        }
+        p {
+            margin:0;
+            padding:0;
+            margin-left: 0;
+        }
+
+       
+
+        
+    </style>
+    
+    
+</head>
+    
+<body>
+    <div id= container>
+        <div id=janela> 
+            <div id=barra>
+            <div id=iconn></div>
+                <div id=titulo>webnamoro</div>
+                <div id=botoes>  
+                <div id=botao1></div>
+                <div id=botao2></div>
+                <div id=botao3></div>
+                
+                </div>
+            </div>
+                
+            
+    
+            </div>
+            <div id=barralado>
+                <div id=foto> <img id=icon src=icon.jpg> </div>
+                <div id="subtitle">Keiko Maneki</div>
+                
+                
+
+
+                <div id=descricao>fofa!(eu acho....)</div>
+                
+            </div>
+            <div id=conteudo>
+             
+                   
+                <form method="get" action="#">
+                     <header id = 'mensagem'></header>
+                    <input type="text" id = 'input' /><button type="submit" id = 'enviar'>Go</button>
+                </form>
+                
+            </div>
+        
+        </div>
+        
+    
+   
+</body>
+
+</html>
